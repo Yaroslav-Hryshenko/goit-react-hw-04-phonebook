@@ -5,7 +5,7 @@ export const FilterInp = styled.input`
     margin-top: 10px;
     outline: none;
     padding: 3px;
-}`;
+`;
 
 export const FilterLabel = styled.label`
   margin-top: 10px;
