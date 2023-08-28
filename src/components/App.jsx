@@ -17,6 +17,10 @@ export const App = () => {
   );
   const [filter, setFilter] = useState('');
 
+    useEffect(() => {
+      window.localStorage.setItem(KEY, JSON.stringify(contacts));
+    }, [contacts]);
+
   const notify = name => toast.error(`${name} is already in contacts.`);
 
   const onAddPhoneBook = contact => {
@@ -41,9 +45,7 @@ export const App = () => {
   const filterPhone = e => {
     setFilter(e.target.value.toLowerCase());
   };
-  useEffect(() => {
-    window.localStorage.setItem(KEY, JSON.stringify(contacts));
-  }, [contacts]);
+
 
   const filteredContacts = contacts.filter(contact =>
     contact.name.toLowerCase().includes(filter)
